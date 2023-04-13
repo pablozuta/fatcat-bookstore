@@ -30,24 +30,27 @@ function BookList() {
 
     return (
         <main>
-            <header className="header-page">
+            {/* TITULO Y BARRA DE BUSQUEDA */}
+            <header className="header-card">
                 <h1 className="titulo">FATCAT BOOKSTORE</h1>
 
                 <input type="text" value={search} placeholder='Search for Title, Author or Genre' onChange={(e) => setSearch(e.target.value)} />
 
-                <img className="svg-gato" src="https://www.svgrepo.com/show/316995/cat.svg" alt="cat reading cartoon" />
+                <img className="svg-gato" src="https://www.svgrepo.com/show/317065/white-cat.svg" alt="cat cartoon" />
             </header>
 
-
+            {/* CONTAINER LIBROS */}
             <section className='container-libros-card'>
                 {filteredBooks.map((book) => (
                     <div className='libros-card' key={book.id}>
                         <img className='imagen-libro' src={book.image} alt={book.title + book.id} />
-                        <h3>Title: {book.title} </h3>
-                        <p>Author: {book.author} </p>
-                        <p>Genre: {book.genre}</p>
-                        <p>Year: {book.year}</p>
-                        <button>READ MORE</button>
+                        <h3>{book.title} </h3>
+                        <p>{book.author} </p>
+                        <p>{book.year}</p>
+                        <p>{book.genre}</p>
+                        
+                        <br />
+                        <button>Read More</button>
 
 
                     </div>
