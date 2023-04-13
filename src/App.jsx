@@ -1,14 +1,17 @@
-import BookList from "./BookList";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BookList from './BookList';
+import BookDetails from './BookDetails';
 
 function App() {
   return (
-    <div>
-     
-      
-      <BookList />
-     
-    </div>
+   
+      <Routes>
+        <Route path="/" element={<BookList />} />
+        <Route path="/books/:bookId" element={<BookDetails />} />
+      </Routes>
+    
   );
 }
 
 export default App;
+

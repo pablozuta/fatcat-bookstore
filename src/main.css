@@ -87,7 +87,7 @@ input {
   justify-content: space-between;
 }
 
-button {
+.button {
   width: fit-content;
   padding-inline: 1rem;
   padding-block: 0.5rem;
@@ -99,6 +99,19 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.button:hover {
   background-color: burlywood;
+}
+
+/* DETAILS BOOKS */
+.container-libros-details {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.imagen-libro-details {
+  max-width: 20rem;
+  margin-inline: auto;
+  margin-block: 1rem;
+  
 }

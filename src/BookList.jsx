@@ -1,10 +1,12 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import supabase from './config/supabaseClient';
+import { NavLink } from 'react-router-dom';
 
 function BookList() {
     const [books, setBooks] = useState([]);
     const [search, setSearch] = useState('');
+    
 
     useEffect(() => {
         async function fetchBooks() {
@@ -13,7 +15,7 @@ function BookList() {
             else setBooks(books);
         }
         fetchBooks();
-        console.log(books);
+        
 
     }, []);
 
@@ -27,6 +29,8 @@ function BookList() {
             ),
         [books, search]
     );
+
+ 
 
     return (
         <main>
@@ -48,9 +52,10 @@ function BookList() {
                         <p>{book.author} </p>
                         <p>{book.year}</p>
                         <p>{book.genre}</p>
+                        <p>{book.id}</p>
                         
                         <br />
-                        <button>Read More</button>
+                        <NavLink  className='button' to={`/books/${book.id.toString()}`}>Read More</NavLink>
 
 
                     </div>
