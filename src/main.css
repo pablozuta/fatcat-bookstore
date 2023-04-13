@@ -14,19 +14,41 @@ body {
 }
 .titulo{
     color: blanchedalmond;
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    max-width: 100%;
 }
 
+
 input {
-    width: 30rem;
+    width: clamp(200px, 50%, 500px);
     height: 2rem;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    border: none;
+    background-color: blanchedalmond;
 }
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: bisque;
+    color: black;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color:burlywood;
+  }
+
+
+  
 .header-page {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding-inline: 4rem;
+    padding-inline: 1rem;
 }
 .svg-gato{
     height: 90px;

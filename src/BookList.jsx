@@ -14,7 +14,7 @@ function BookList() {
         }
         fetchBooks();
         console.log(books);
-        
+
     }, []);
 
     const filteredBooks = useMemo(
@@ -30,21 +30,25 @@ function BookList() {
 
     return (
         <main>
-            <div className="search-card">
-            <h4>SEARCH</h4>
-            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-            </div>
-           
+            <header className="header-page">
+                <h1 className="titulo">FATCAT BOOKSTORE</h1>
+
+                <input type="text" value={search} placeholder='Search for Title, Author or Genre' onChange={(e) => setSearch(e.target.value)} />
+
+                <img className="svg-gato" src="https://www.svgrepo.com/show/316995/cat.svg" alt="cat reading cartoon" />
+            </header>
+
 
             <section className='container-libros-card'>
                 {filteredBooks.map((book) => (
-                    <div  className='libros-card' key={book.id}>
+                    <div className='libros-card' key={book.id}>
                         <img className='imagen-libro' src={book.image} alt={book.title + book.id} />
                         <h3>Title: {book.title} </h3>
                         <p>Author: {book.author} </p>
                         <p>Genre: {book.genre}</p>
                         <p>Year: {book.year}</p>
-                       
+                        <button>READ MORE</button>
+
 
                     </div>
                 ))}
@@ -53,6 +57,6 @@ function BookList() {
     );
 }
 
-export default BookList;  
+export default BookList;
 
 
