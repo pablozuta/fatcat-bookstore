@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useMemo } from 'react';
 import supabase from './config/supabaseClient';
 import { NavLink } from 'react-router-dom';
@@ -6,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function BookList() {
     const [books, setBooks] = useState([]);
     const [search, setSearch] = useState('');
-    
+
 
     useEffect(() => {
         async function fetchBooks() {
@@ -15,8 +14,6 @@ function BookList() {
             else setBooks(books);
         }
         fetchBooks();
-        
-
     }, []);
 
     const filteredBooks = useMemo(
@@ -24,13 +21,12 @@ function BookList() {
             books.filter(
                 (book) =>
                     book.title.toLowerCase().includes(search.toLowerCase()) ||
-                    book.author.toLowerCase().includes(search.toLowerCase()) ||
-                    book.genre.toLowerCase().includes(search.toLowerCase())
+                    book.author.toLowerCase().includes(search.toLowerCase())
             ),
         [books, search]
     );
 
- 
+
 
     return (
         <main>
@@ -38,7 +34,7 @@ function BookList() {
             <header className="header-card">
                 <h1 className="titulo">FATCAT BOOKSTORE</h1>
 
-                <input type="text" value={search} placeholder='Search for Title, Author or Genre' onChange={(e) => setSearch(e.target.value)} />
+                <input type="text" value={search} placeholder='Search for Title or Author...' onChange={(e) => setSearch(e.target.value)} />
 
                 <img className="svg-gato" src="https://www.svgrepo.com/show/317065/white-cat.svg" alt="cat cartoon" />
             </header>
@@ -51,13 +47,8 @@ function BookList() {
                         <h3>{book.title} </h3>
                         <p>{book.author} </p>
                         <p>{book.year}</p>
-                        <p>{book.genre}</p>
-                        <p>{book.id}</p>
-                        
                         <br />
-                        <NavLink  className='button' to={`/books/${book.id.toString()}`}>Read More</NavLink>
-
-
+                        <NavLink className='button' to={`/books/${book.id.toString()}`}>Read More</NavLink>
                     </div>
                 ))}
             </section>
