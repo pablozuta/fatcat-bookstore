@@ -41,7 +41,7 @@ function BookDetails(props) {
                         <p>{book.description} </p>
                         <br />
 
-                        <NavLink  className='button' to={"/"}>Back Home</NavLink>
+                        <NavLink  className='button' to={"/"}>Home</NavLink>
                     </div>
                 ))}
             </section>

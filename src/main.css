@@ -72,17 +72,20 @@ input {
 .container-libros-card {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   padding: 5%;
   gap: 1rem;
 }
 
 .imagen-libro {
-  width: 300px;
-  height: 300px;
+  
+  width: 320px;
+  height: 320px;
   object-fit: cover;
 }
 .libros-card {
+  margin-inline: auto;
   border: 1px solid lemonchiffon;
   padding: 0.5rem;
   display: flex;
@@ -95,10 +98,9 @@ input {
   padding-inline: 1rem;
   padding-block: 0.5rem;
   border: none;
-  background-color: bisque;
+  background-color: coral;
   color: black;
   font-size: 1.3rem;
-  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
