@@ -39,6 +39,7 @@ function BookDetails(props) {
                         <img className='imagen-libro-details' src={book.image} alt={book.title + book.id} />
                         <h3>{book.title} </h3>
                         <p>{book.description} </p>
+                        <br />
 
                         <NavLink  className='button' to={"/"}>Back Home</NavLink>
                     </div>
