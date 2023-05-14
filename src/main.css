@@ -12,7 +12,7 @@ body {
   font-size: 1.3rem;
   font-family: 'EB Garamond', serif;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -70,6 +70,8 @@ input {
 
 /*  CARD LIBROS */
 .container-libros-card {
+  max-width: 1320px;
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,14 +81,12 @@ input {
 }
 
 .imagen-libro {
-  
   width: 320px;
-  height: 320px;
+  height: 390px;
   object-fit: cover;
 }
 .libros-card {
   margin-inline: auto;
-  border: 1px solid lemonchiffon;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -94,6 +94,7 @@ input {
 }
 
 .button {
+  margin-top: -1rem;
   width: fit-content;
   padding-inline: 1rem;
   padding-block: 0.5rem;
